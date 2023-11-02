@@ -27,7 +27,7 @@ let human = new Human(20, 5, .7);
 
 let alien = [2];
 let x, y, z;
-for (let i = 0; i<alien.length; i++){
+for (let i = 0; i<2; i++){
     x = Math.random() * (3) + 3
     y = Math.random() * (2) + 2
     z = Math.random() * (.2) + .6
@@ -38,7 +38,7 @@ for (let i = 0; i<alien.length; i++){
 
 let i = 0;
 
-while (i < 2){
+while (i <= 1){
     human.attack()
     
     if(Math.random() < human.accuracy){
