@@ -1,7 +1,7 @@
 // const screen = document.querySelector(".div");
 
-const humanattack = document.querySelector("humanAttack");
-const alienattack = document.querySelector("alienAttack");
+const humanattack = document.querySelector(".humanAttack");
+const alienattack = document.querySelector(".alienAttack");
 const screen = document.querySelector(".screen");
 const li = document.querySelector(".li");
 
@@ -89,6 +89,8 @@ function HumanAttack(){
             l1 = document.createElement("li");
             l1.innerHTML="Human destroy all aliens";
             screen.append(l1);
+            humanattack.disabled = true;
+            alienattack.disabled = true;
             // break;
         }
 
@@ -126,6 +128,8 @@ function AlienAttack(){
             l1 = document.createElement("li");
             l1.innerHTML="Game Over!!";
             screen.append(l1);
+            humanattack.disabled = true;
+            alienattack.disabled = true;
             // break;
 
         }
