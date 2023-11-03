@@ -51,6 +51,12 @@ while (i < 6) {
 
             console.log("Human wins round " + (i + 1));
             ++i;
+            // let y = prompt("Would you like to retreat? (y = yes, n = no)")
+            // if (y ==="y"){
+            //     console.log("You retreated. Goodbye");
+            //     break;
+            // }
+
         }
 
         // break;
@@ -65,7 +71,7 @@ while (i < 6) {
     if (Math.random() < alien[i].accuracy) {
 
         console.log("Alien hit the human!!!");
-        console.log("Alien have done" + alien[i].firepower + " damage");
+        console.log("Alien have done " + alien[i].firepower + " damage");
         human.hull -= alien[i].firepower;
         console.log("Human has " + human.hull + " hull remaining.");
         if (human.hull <= 0) {
