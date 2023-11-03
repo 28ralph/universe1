@@ -1,3 +1,11 @@
+// const screen = document.querySelector(".div");
+
+
+
+
+
+
+
 class Human {
 
     constructor(hull, firepower, accuracy) {
@@ -58,6 +66,10 @@ while (i < 6) {
             // }
 
         }
+        if (i ===5 && alien[i].hull <=0){
+            console.log("Human destroy all aliens");
+            break;
+        }
 
         // break;
     }
@@ -66,8 +78,8 @@ while (i < 6) {
         // continue
     }
 
-    // alien[i].attack()
-    console.log("Alien attacks");
+    alien[i].attack()
+    // console.log("Alien attacks");
     if (Math.random() < alien[i].accuracy) {
 
         console.log("Alien hit the human!!!");
