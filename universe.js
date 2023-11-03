@@ -4,9 +4,10 @@ const humanattack = document.querySelector(".humanAttack");
 const alienattack = document.querySelector(".alienAttack");
 const screen = document.querySelector(".screen");
 const li = document.querySelector(".li");
-
+const ship1 = document.querySelector(".ship1");
 let l1;
-
+let a= 0;
+let b = 500;
 class Human {
 
     constructor(hull, firepower, accuracy) {
@@ -48,7 +49,7 @@ for (let i = 0; i < 6; i++) {
 
 
 }
-
+ship2();
 let i = 0;
 
 while (i < 6) {
@@ -179,5 +180,24 @@ function AlienAttack() {
 
 
 
+
+}
+
+function ship2(){
+    if (a === 1500){
+        a = 0;
+       
+    }
+    if (b === 500){
+        b = 400;
+    }
+    if (b === 400){
+        b = 500;
+    }
+ a +=3;
+ 
+ ship1.style.left = a + "px";
+ ship1.style.top = b + "px";
+ setTimeout(ship2, 100);
 
 }
