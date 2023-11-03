@@ -6,14 +6,26 @@
     <title>Document</title>
 
     <style>
+
+        body {font-family: Arial;}
         .screen {width: 700px;
                 height: 700px;
         background-color: aqua;}
 
         li {color: red;
-            font-size: 24px;}
+            font-size: 24px;
+            list-style-type : none;}
        
-            button {position:sticky;}
+            button {position:sticky;
+                    border-radius: 3px;
+                    background-color: aquamarine;}
+
+        button:hover {cursor: pointer;}
+
+        .humanAttack {left: 275px;} 
+        .alienAttack {left: 380px;}
+
+        /* ul {} */
 
     </style>
 
@@ -23,6 +35,7 @@
 </head>
 <body>
     <button class = "humanAttack" onclick="HumanAttack()">Human Attack</button>
+    <!-- <input type = "text" class = 'input'> -->
     <button class = "alienAttack" onclick="AlienAttack()">Alien Attack</button>
 
     <div class = "screen"></div>
