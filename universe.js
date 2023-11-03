@@ -48,9 +48,9 @@ while (i <= 1){
         alien[i].hull -= human.firepower;
         console.log("Alien has " + alien[i].hull + " hull remaining.");
         if (alien[i].hull <= 0){
+           
+            console.log("Human wins round " + (i + 1));
             ++i;
-            console.log("Human wins");
-            
         }
 
         // break;
