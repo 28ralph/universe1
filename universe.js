@@ -1,10 +1,11 @@
 // const screen = document.querySelector(".div");
 
+const humanattack = document.querySelector("humanAttack");
+const alienattack = document.querySelector("alienAttack");
+const screen = document.querySelector(".screen");
+const li = document.querySelector(".li");
 
-
-
-
-
+let l1;
 
 class Human {
 
@@ -15,7 +16,9 @@ class Human {
     }
 
     attack() {
-        console.log("You are attacking an alien!");
+        l1 = document.createElement("li");
+        l1.innerHTML = "You are attacking an alien!/n";
+        screen.append(l1);
     }
 }
 
@@ -27,7 +30,9 @@ class Alien {
     }
 
     attack() {
-        console.log("Alien attacking human");
+        l1 = document.createElement("li");
+        l1.innerHTML ="Alien attacking human";
+        screen.append(l1);
     }
 }
 
@@ -47,59 +52,95 @@ for (let i = 0; i < 6; i++) {
 let i = 0;
 
 while (i < 6) {
+    humanattack.HumanAttack();
+    alienattack.AlienAttack();
+
+    
+}
+
+function HumanAttack(){
+
     human.attack()
 
     if (Math.random() < human.accuracy) {
-
-        console.log("You hit the alien!!!");
-        console.log("You have done 5 damage");
+        l1 = document.createElement("li");
+        l1.innerHTML="You hit the alien!!!/n";
+        screen.append(l1);
+        l1 = document.createElement("li");
+        l1.innerHTML="You have done 5 damage";
+        screen.append(l1);
         alien[i].hull -= human.firepower;
-        console.log("Alien has " + alien[i].hull + " hull remaining.");
+        l1 = document.createElement("li");
+        l1.innerHTML="Alien has " + alien[i].hull + " hull remaining.";
+        screen.append(l1);
         if (alien[i].hull <= 0) {
-
-            console.log("Human wins round " + (i + 1));
+            l1 = document.createElement("li");
+            l1.innerHTML="Human wins round " + (i + 1);
+            screen.append(l1);
             ++i;
             // let y = prompt("Would you like to retreat? (y = yes, n = no)")
             // if (y ==="y"){
-            //     console.log("You retreated. Goodbye");
+            //     l1.innerHTML("You retreated. Goodbye");
             //     break;
             // }
 
         }
         if (i ===5 && alien[i].hull <=0){
-            console.log("Human destroy all aliens");
-            break;
+            l1 = document.createElement("li");
+            l1.innerHTML="Human destroy all aliens";
+            screen.append(l1);
+            // break;
         }
 
         // break;
     }
     else {
-        console.log("You missed");
+        l1 = document.createElement("li");
+        l1.innerHTML="You missed";
+        screen.append(l1);
         // continue
     }
 
+
+
+}
+
+function AlienAttack(){
     alien[i].attack()
-    // console.log("Alien attacks");
+    // l1.innerHTML("Alien attacks");
     if (Math.random() < alien[i].accuracy) {
-
-        console.log("Alien hit the human!!!");
-        console.log("Alien have done " + alien[i].firepower + " damage");
+        l1 = document.createElement("li");
+        l1.innerHTML="Alien hit the human!!!";
+        screen.append(l1);
+        l1 = document.createElement("li");
+        l1.innerHTML="Alien have done " + alien[i].firepower + " damage";
+        screen.append(l1);
         human.hull -= alien[i].firepower;
-        console.log("Human has " + human.hull + " hull remaining.");
+        l1 = document.createElement("li");
+        l1.innerHTML="Human has " + human.hull + " hull remaining.";
+        screen.append(l1);
         if (human.hull <= 0) {
-
-            console.log("Alien wins " + (i + 1));
-            console.log("Game Over!!");
-            break;
+            l1 = document.createElement("li");
+            l1.innerHTML ="Alien wins " + (i + 1);
+            screen.append(l1);
+            l1 = document.createElement("li");
+            l1.innerHTML="Game Over!!";
+            screen.append(l1);
+            // break;
 
         }
 
         // break;
     }
     else {
-        console.log("Alien missed");
+        l1 = document.createElement("li");
+        l1.innerHTML="Alien missed";
+        screen.append(l1);
         // continue
     }
+
+
+
 
 
 
