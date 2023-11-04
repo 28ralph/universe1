@@ -5,6 +5,7 @@ const alienattack = document.querySelector(".alienAttack");
 const screen = document.querySelector(".screen");
 const li = document.querySelector(".li");
 const ship1 = document.querySelector(".ship1");
+const yes = document.querySelector("#yes")
 let l1;
 let a= 0;
 let b = 500;
@@ -89,6 +90,19 @@ function HumanAttack() {
             l1 = document.createElement("li");
             l1.innerHTML = "Human wins round " + (i + 1);
             screen.append(l1);
+
+            alert("Would you like to retreat? Check radio button")
+            // if (yes.checked){
+            //     l1 = document.createElement("li");
+            //     l1.innerHTML = "You retreated goodbye!"
+            //     screen.append(l1);
+
+            //     humanattack.disabled = true;
+            //     alienattack.disabled = true;
+            //     return
+            // }
+
+
 
             // let quit = prompt("Would you like to retreat? (y = yes, n = no)");
             // if (quit === "y") {
@@ -200,4 +214,17 @@ function ship2(){
  ship1.style.top = b + "px";
  setTimeout(ship2, 100);
 
+}
+
+function Retreat(){
+
+    if (yes.checked){
+        l1 = document.createElement("li");
+        l1.innerHTML = "You retreated goodbye!"
+        screen.append(l1);
+
+        humanattack.disabled = true;
+        alienattack.disabled = true;
+        return
+    }
 }

@@ -23,13 +23,13 @@
 
         button:hover {cursor: pointer;}
 
-        .humanAttack {left: 275px;} 
-        .alienAttack {left: 380px;}
+        .humanAttack {left: 300px;} 
+        .alienAttack {left: 410px;}
         img {position:absolute;
         left: 0;
         top: 250px;
     }
-       
+       .retreat {left: 500px;}
     </style>
 
 
@@ -38,10 +38,17 @@
 </head>
 <body>
     <img src="ship1.bmp" class="ship1" width="100px"; height: "100px";>
+    <fieldset>
     <button class = "humanAttack" onclick="HumanAttack()">Human Attack</button>
     <!-- <input type = "text" class = 'input'> -->
-    <button class = "alienAttack" onclick="AlienAttack()">Alien Attack</button>
 
+    <label>Retreat</label>
+    <input type="radio" id ="yes" value = "yes">Yes
+    <input type="radio" id = "no" value = "no">No
+    
+    <button class = "alienAttack" onclick="AlienAttack()">Alien Attack</button>
+    <button class = "retreat" onclick="Retreat()">Retreat</button>
+</fieldset>
     <div class = "screen"></div>
     <ul class = "li"></ul>
 
