@@ -6,8 +6,9 @@ const screen = document.querySelector(".screen");
 const li = document.querySelector(".li");
 const ship1 = document.querySelector(".ship1");
 const yes = document.querySelector("#yes")
+const retreat = document.querySelector(".retreat")
 let l1;
-let a= 0;
+let a = 0;
 let b = 500;
 class Human {
 
@@ -19,7 +20,7 @@ class Human {
 
     attack() {
         l1 = document.createElement("li");
-        l1.innerHTML = "You are attacking an alien!/n";
+        l1.innerHTML = "You are attacking an alien!";
         screen.append(l1);
     }
 }
@@ -52,7 +53,7 @@ for (let i = 0; i < 6; i++) {
 }
 ship2();
 let i = 0;
-
+retreat.disabled = true;
 while (i < 6) {
     humanattack.HumanAttack();
     // if (alien[i].hull <= 0){
@@ -77,7 +78,7 @@ function HumanAttack() {
 
     if (Math.random() < human.accuracy) {
         l1 = document.createElement("li");
-        l1.innerHTML = "You hit the alien!!!/n";
+        l1.innerHTML = "You hit the alien!!!";
         screen.append(l1);
         l1 = document.createElement("li");
         l1.innerHTML = "You have done 5 damage";
@@ -91,7 +92,8 @@ function HumanAttack() {
             l1.innerHTML = "Human wins round " + (i + 1);
             screen.append(l1);
 
-            alert("Would you like to retreat? Check radio button")
+            alert("Would you like to retreat? Click retreat button")
+            retreat.disabled = false;
             // if (yes.checked){
             //     l1 = document.createElement("li");
             //     l1.innerHTML = "You retreated goodbye!"
@@ -124,7 +126,7 @@ function HumanAttack() {
             screen.append(l1);
 
             ++i;
-            
+
 
         }
         if (i === 5 && alien[i].hull <= 0) {
@@ -150,6 +152,7 @@ function HumanAttack() {
 }
 
 function AlienAttack() {
+    retreat.disabled = true;
     alien[i].attack()
     // l1.innerHTML("Alien attacks");
     if (Math.random() < alien[i].accuracy) {
@@ -197,34 +200,35 @@ function AlienAttack() {
 
 }
 
-function ship2(){
-    if (a === 1500){
+function ship2() {
+    if (a === 1500) {
         a = 0;
-       
+
     }
-    if (b === 500){
+    if (b === 500) {
         b = 497;
     }
-    else if (b === 497){
+    else if (b === 497) {
         b = 500;
     }
- a +=3;
- 
- ship1.style.left = a + "px";
- ship1.style.top = b + "px";
- setTimeout(ship2, 100);
+    a += 3;
+
+    ship1.style.left = a + "px";
+    ship1.style.top = b + "px";
+    setTimeout(ship2, 100);
 
 }
 
-function Retreat(){
+function Retreat() {
 
-    if (yes.checked){
-        l1 = document.createElement("li");
-        l1.innerHTML = "You retreated goodbye!"
-        screen.append(l1);
+    // if (yes.checked){
+    l1 = document.createElement("li");
+    l1.innerHTML = "You retreated goodbye!"
+    screen.append(l1);
 
-        humanattack.disabled = true;
-        alienattack.disabled = true;
-        return
-    }
+    humanattack.disabled = true;
+    alienattack.disabled = true;
+    retreat.disabled = true;
+    return
+    // }
 }

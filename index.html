@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-
-        body {font-family: Arial;
-            background-color: aqua;}
-        .screen {width: 700px;
-                height: 700px;
+        body {
+            font-family: Arial;
+            background-color: aqua;
         }
 
-        li {color: red;
+        .screen {
+            width: 700px;
+            height: 700px;
+        }
+
+        li {
+            color: red;
             font-size: 24px;
-            list-style-type : none;}
-       
-            button {position:sticky;
-                    border-radius: 3px;
-                    background-color: aquamarine;}
+            list-style-type: none;
+        }
 
-        button:hover {cursor: pointer;}
+        button {
+            position: sticky;
+            border-radius: 3px;
+            background-color: aquamarine;
+        }
 
-        .humanAttack {left: 300px;} 
-        .alienAttack {left: 410px;}
-        img {position:absolute;
-        left: 0;
-        top: 250px;
-    }
-       .retreat {left: 500px;}
+        button:hover {
+            cursor: pointer;
+        }
+
+        .humanAttack {
+            left: 300px;
+        }
+
+        .alienAttack {
+            left: 410px;
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 250px;
+        }
+
+        .retreat {
+            left: 500px;
+        }
     </style>
 
 
 
 
 </head>
+
 <body>
-    <img src="ship1.bmp" class="ship1" width="100px"; height: "100px";>
+    <img src="ship1.bmp" class="ship1" width="100px" ; height="100px" ;>
     <fieldset>
-    <button class = "humanAttack" onclick="HumanAttack()">Human Attack</button>
-    <!-- <input type = "text" class = 'input'> -->
+        <button class="humanAttack" onclick="HumanAttack()">Human Attack</button>
+        
 
-    <label>Retreat</label>
-    <input type="radio" id ="yes" value = "yes" name="retreat">Yes
-    <input type="radio" id = "no" value = "no" name="retreat">No
-    
-    <button class = "alienAttack" onclick="AlienAttack()">Alien Attack</button>
-    <button class = "retreat" onclick="Retreat()">Retreat</button>
-</fieldset>
-    <div class = "screen"></div>
-    <ul class = "li"></ul>
+        <button class="alienAttack" onclick="AlienAttack()">Alien Attack</button>
+        <button class="retreat" onclick="Retreat()">Retreat</button>
+    </fieldset>
+    <div class="screen"></div>
+    <ul class="li"></ul>
 
-    <script src ="universe.js" defer></script>
+    <script src="universe.js" defer></script>
 </body>
+
 </html>
